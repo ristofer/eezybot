@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>eezybotarm</name>
+  <name>eezybot</name>
   <version>0.0.0</version>
   <description>eezybot URDF with gazebo support</description>
 
