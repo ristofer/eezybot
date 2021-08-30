@@ -2,7 +2,7 @@
 
 <robot name="sibot" xmlns:xacro="http://www.ros.org/wiki/xacro">
      <!-- Transmissions -->
-  <xacro:include filename="$(find eezybotarm)/urdf/gazebo.xacro" />
+  <xacro:include filename="$(find eezybot)/urdf/gazebo.xacro" />
   <xacro:ros_control prefix="/"/>
   <xacro:joint_transmission joint="joint_1"/>
   <xacro:joint_transmission joint="joint_2"/>
@@ -21,7 +21,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://eezybotarm/meshes/ebamk2/base_link.STL" />
+          filename="package://eezybot/meshes/ebamk2/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -33,7 +33,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
 	        <mesh
-          filename="package://eezybotarm/meshes/ebamk2/base_link.STL" />
+          filename="package://eezybot/meshes/ebamk2/base_link.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -79,7 +79,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://eezybotarm/meshes/ebamk2/link_1.STL" />
+          filename="package://eezybot/meshes/ebamk2/link_1.STL" />
       </geometry>
       <material
         name="">
@@ -91,7 +91,7 @@
       <origin xyz="0 -0.04 0" rpy="0 0 0" />
       <geometry>
 	        <mesh
-          filename="package://eezybotarm/meshes/ebamk2/link_1.STL" />
+          filename="package://eezybot/meshes/ebamk2/link_1.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -132,7 +132,7 @@
         rpy="3.14159 0 0" />
       <geometry>
         <mesh
-          filename="package://eezybotarm/meshes/ebamk2/link_2.STL" />
+          filename="package://eezybot/meshes/ebamk2/link_2.STL" />
       </geometry>
       <material
         name="">
@@ -144,7 +144,7 @@
       <origin xyz="0 0 0.0075" rpy="3.14159  0 0" />
       <geometry>
 	      <mesh
-          filename="package://eezybotarm/meshes/ebamk2/link_2.STL" />
+          filename="package://eezybot/meshes/ebamk2/link_2.STL" />
       </geometry>
     </collision>
     <inertial>
@@ -185,7 +185,7 @@
         rpy="3.14159 0 0.1309" />
       <geometry>
         <mesh
-          filename="package://eezybotarm/meshes/ebamk2/link_3.STL" />
+          filename="package://eezybot/meshes/ebamk2/link_3.STL" />
       </geometry>
       <material
         name="">
@@ -197,7 +197,7 @@
       <origin xyz="0 0 0.0335" rpy="3.14159 0 0.1309" />
       <geometry>
 	      <mesh
-          filename="package://eezybotarm/meshes/ebamk2/link_3.STL" />
+          filename="package://eezybot/meshes/ebamk2/link_3.STL" />
       </geometry>
     </collision>
     <inertial>
