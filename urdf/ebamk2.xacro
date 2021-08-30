@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+
+<robot name="sibot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+     <!-- Transmissions -->
+  <xacro:include filename="$(find eezybotarm)/urdf/gazebo.xacro" />
+  <xacro:ros_control prefix="/"/>
+  <xacro:joint_transmission joint="joint_1"/>
+  <xacro:joint_transmission joint="joint_2"/>
+  <xacro:joint_transmission joint="joint_3"/>
+
+
+ <link name="base_link">
+
+ </link>
+<!-- BASE LINK -->
+  <link
+    name="link_0">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eezybotarm/meshes/ebamk2/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.275 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+	        <mesh
+          filename="package://eezybotarm/meshes/ebamk2/base_link.STL" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- <mass value="0.058"/> -->
+      <mass value="0.19357368"/>
+      <!-- <inertia ixx="1.429e-4"  ixy="2.778e-10"  ixz="1.773e-8" iyy="1.943e-4" iyz="-2.656e-7" izz="5.361e-5" /> -->
+      <inertia ixx="1.84569610e-4"  ixy="-4.09475462e-6"  ixz="-2.91063667e-5" iyy="7.65700035e-4" iyz="2.32776537e-8" izz="9.00861891e-4" />
+    </inertial>
+  </link>
+
+  <joint name="base_link_to_link_0" type="fixed">
+    <parent link="base_link"/>
+    <child link="link_0"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+  </joint>
+<!-- JOINT 1 -->
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="link_0" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.7854" upper="0.7854"/>
+      <!--   [-45,45]-->
+  </joint>
+
+<!-- LINK 1 -->
+  <link
+    name="link_1">
+    <visual>
+      <origin
+        xyz="0 -0.04 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eezybotarm/meshes/ebamk2/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.275 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.04 0" rpy="0 0 0" />
+      <geometry>
+	        <mesh
+          filename="package://eezybotarm/meshes/ebamk2/link_1.STL" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- <mass value="0.058"/> -->
+      <mass value="0.19357368"/>
+      <!-- <inertia ixx="1.429e-4"  ixy="2.778e-10"  ixz="1.773e-8" iyy="1.943e-4" iyz="-2.656e-7" izz="5.361e-5" /> -->
+      <inertia ixx="1.84569610e-4"  ixy="-4.09475462e-6"  ixz="-2.91063667e-5" iyy="7.65700035e-4" iyz="2.32776537e-8" izz="9.00861891e-4" />
+    </inertial>
+  </link>
+
+<!-- JOINT 2 -->
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0 -0.005 0.035"
+      rpy="1.578 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-0.6109" upper="0.9599"/>
+      <!--   [-35,55]-->
+  </joint>
+
+<!-- LINK 2-->
+  <link
+    name="link_2">
+    <visual>
+      <origin
+        xyz="0 0 0.0075"
+        rpy="3.14159 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eezybotarm/meshes/ebamk2/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0075" rpy="3.14159  0 0" />
+      <geometry>
+	      <mesh
+          filename="package://eezybotarm/meshes/ebamk2/link_2.STL" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- <mass value="0.058"/> -->
+      <mass value="0.19357368"/>
+      <!-- <inertia ixx="1.429e-4"  ixy="2.778e-10"  ixz="1.773e-8" iyy="1.943e-4" iyz="-2.656e-7" izz="5.361e-5" /> -->
+      <inertia ixx="1.84569610e-4"  ixy="-4.09475462e-6"  ixz="-2.91063667e-5" iyy="7.65700035e-4" iyz="2.32776537e-8" izz="9.00861891e-4" />
+    </inertial>
+  </link>
+
+<!-- JOINT 3 -->
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="-0.021 0.133 -0.0105"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-1.2217" upper="0.3491"/>
+      <!--   [-70,20]-->
+  </joint>
+
+<!-- LINK 3 -->
+   <link
+    name="link_3">
+    <visual>
+      <origin
+        xyz="0 0 0.0335"
+        rpy="3.14159 0 0.1309" />
+      <geometry>
+        <mesh
+          filename="package://eezybotarm/meshes/ebamk2/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0335" rpy="3.14159 0 0.1309" />
+      <geometry>
+	      <mesh
+          filename="package://eezybotarm/meshes/ebamk2/link_3.STL" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- <mass value="0.058"/> -->
+      <mass value="0.19357368"/>
+      <!-- <inertia ixx="1.429e-4"  ixy="2.778e-10"  ixz="1.773e-8" iyy="1.943e-4" iyz="-2.656e-7" izz="5.361e-5" /> -->
+      <inertia ixx="1.84569610e-4"  ixy="-4.09475462e-6"  ixz="-2.91063667e-5" iyy="7.65700035e-4" iyz="2.32776537e-8" izz="9.00861891e-4" />
+    </inertial>
+  </link>
+</robot>

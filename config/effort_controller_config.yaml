@@ -1,0 +1,24 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# Left arm controller
+
+joint_1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_1
+    pid: {p: 53000, i: 390, d: 10.0}
+
+joint_2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_2
+    pid: {p: 53000, i: 390, d: 10.0}
+
+joint_3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_3
+    pid: {p: 53000, i: 390, d: 10.0}
+
+#  state_publish_rate:  25            # Override default
+#  action_monitor_rate: 30            # Override default
+#  stop_trajectory_duration: 0        # Override default
