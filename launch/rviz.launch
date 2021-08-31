@@ -2,7 +2,7 @@
 	<arg name="gui" default="True" />
 
 	 <param name="robot_description"
-    command="$(find xacro)/xacro --inorder '$(find eezybot)/urdf/ebamk2.xacro'" />
+    command="$(find xacro)/xacro --inorder '$(find eezybot)/urdf/ebamk2-complete.xacro'" />
 	<param name="use_gui" value="$(arg gui)"/>
 
 	<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
