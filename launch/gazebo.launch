@@ -11,7 +11,6 @@
   <!-- Map -->
   <arg name="worldname" default="empty" />
 
-  <!-- Bender model type -->
   <arg name="model" default="$(find eezybot)/urdf/ebamk2-complete.xacro" />
 
   <!-- - - - - - - -  USEFUL Parameters - - - - - - - -->
@@ -26,20 +25,11 @@
 
   <!-- Use simulation time -->
   <param name="use_sim_time" value="$(arg use_sim_time)" />
- <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
   <!-- Launch Gazebo with empty world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
   </include>
-  
 
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-        args="-unpause -urdf -model robot -param robot_description" respawn="false" output="screen" />
-
-  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="30.0" />
-    <param name="use_tf_static" type="bool" value="true" />
-  </node>
 
 </launch>
