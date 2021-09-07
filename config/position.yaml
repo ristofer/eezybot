@@ -7,17 +7,17 @@ joint_state_controller:
 joint_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: joint_1
-    pid: {p: 53000, i: 390, d: 10.0}
+    pid: {p: 11, i: 0.05, d: 0.5}
 
 joint_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: joint_2
-    pid: {p: 53000, i: 390, d: 10.0}
+    pid: {p: 11, i: 0.05, d: 0.5}
 
 joint_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: joint_3
-    pid: {p: 53000, i: 390, d: 10.0}
+    pid: {p: 11, i: 0.05, d: 0.5}
 
 #  state_publish_rate:  25            # Override default
 #  action_monitor_rate: 30            # Override default

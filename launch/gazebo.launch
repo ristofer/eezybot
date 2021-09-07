@@ -11,8 +11,6 @@
   <!-- Map -->
   <arg name="worldname" default="empty" />
 
-  <arg name="model" default="$(find eezybot)/urdf/ebamk2-complete.xacro" />
-
   <!-- - - - - - - -  USEFUL Parameters - - - - - - - -->
 
   <!-- Publish /clock -->
