@@ -248,7 +248,7 @@
     <parent link="claw_base"/>
     <child link="claw_l"/>
     <axis xyz="0 0 1" />
-    <limit effort="0" lower="0" upper="0.65" velocity="1.0" />
+    <limit effort="10" lower="0" upper="0.65" velocity="1.0" />
   </joint>
 
   <joint name="joint_7" type="revolute">
@@ -274,7 +274,7 @@
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.00 0.000 0" rpy="0 0 2.9" />
+      <origin xyz="0.0235 0.000 0" rpy="0 0 2.9" />
       <mass value="0.01"/>
       <xacro:cuboid_inertia_def x="0.047" y="0.005" z="0.005" mass="0.01"/>
     </inertial>
@@ -336,6 +336,16 @@
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="servo4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+    <transmission name="trans_6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="servo6">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
